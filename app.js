@@ -1,15 +1,16 @@
-setTimeout(function(){
-  console.log('3 secnds have passed')
-}, 3000)
+const {counter,adder, pi} = require('./stuff')
 
-var time = 0
-var timer = setInterval(function(){
-  time+= 2
-  console.log(time + ' secnds have passed')
-  if (time > 5) {
-    clearInterval(timer)
-  }
-}, 2000)
 
-console.log(__dirname)
-console.log(__filename)
+console.log(counter(['chelsea', 'ATM', 'CAM']))
+console.log(adder(8,9 * pi))
+
+var events = require('events')
+
+
+var myEmitter = new events.EventEmitter()
+
+myEmitter.on('someEvent', function(mssg){
+  console.log(mssg)
+})
+
+myEmitter.emit('someEvent', 'the event was emitted')
