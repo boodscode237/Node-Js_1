@@ -1,16 +1,8 @@
-const {counter,adder, pi} = require('./stuff')
+const fs = require('fs')
 
+let readMe = fs.readFileSync('reading.txt', 'utf8')
+fs.writeFileSync('math.csv', readMe)
 
-console.log(counter(['chelsea', 'ATM', 'CAM']))
-console.log(adder(8,9 * pi))
+//code
 
-var events = require('events')
-
-
-var myEmitter = new events.EventEmitter()
-
-myEmitter.on('someEvent', function(mssg){
-  console.log(mssg)
-})
-
-myEmitter.emit('someEvent', 'the event was emitted')
+console.log(readMe + '<>')
